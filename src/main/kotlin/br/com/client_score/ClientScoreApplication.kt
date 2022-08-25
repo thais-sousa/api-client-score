@@ -1,4 +1,4 @@
-package com.client_score
+package br.com.client_score
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
