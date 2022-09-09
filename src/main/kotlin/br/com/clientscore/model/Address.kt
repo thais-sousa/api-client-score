@@ -1,6 +1,6 @@
-package br.com.client_score.model
+package br.com.clientscore.model
 
-import br.com.client_score.enums.State
+import br.com.clientscore.enums.State
 import java.time.LocalDateTime
 import java.util.*
 import javax.persistence.*
@@ -11,16 +11,16 @@ data class Address(
     @Id
     val id: UUID = UUID.randomUUID(),
 
-    @OneToOne
-    @JoinColumn(name = "person_id")
-    val person: Person,
-
+    @Column(nullable = false)
     val street: String,
 
+    @Column(nullable = false)
     val city: String,
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
     val state: State,
 
+    @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 )

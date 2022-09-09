@@ -1,4 +1,4 @@
-package br.com.client_score.model
+package br.com.clientscore.model
 
 import java.time.LocalDateTime
 import java.util.*

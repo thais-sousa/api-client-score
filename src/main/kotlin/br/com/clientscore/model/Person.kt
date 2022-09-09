@@ -1,4 +1,4 @@
-package br.com.client_score.model
+package br.com.clientscore.model
 
 import java.time.LocalDate
 import java.time.LocalDateTime
@@ -11,24 +11,28 @@ data class Person(
     @Id
     val id: UUID = UUID.randomUUID(),
 
-    @OneToOne(mappedBy = "person")
-    val client: Client,
-
-    @OneToOne(mappedBy = "person")
+    @OneToOne
+    @JoinColumn(name="address_id")
     val address: Address,
 
+    @Column(nullable = false)
     val name: String,
 
+    @Column(nullable = false)
     val lastName: String,
 
+    @Column(nullable = false)
     val birthDate: LocalDate,
 
-    @Column(unique = true)
+    @Column(unique = true, nullable = false)
     val cpf: String,
 
+    @Column(nullable = false)
     val phoneNumber: String,
 
+    @Column(nullable = false)
     val email: String,
 
+    @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 )

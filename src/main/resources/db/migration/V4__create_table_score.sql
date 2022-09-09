@@ -6,4 +6,4 @@ CREATE TABLE public.score(
     created_at TIMESTAMP NOT NULL,
     CONSTRAINT score_pk PRIMARY KEY (id),
     CONSTRAINT cliente_fk FOREIGN KEY (client_id) REFERENCES client (id)
-)
+);

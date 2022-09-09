@@ -1,4 +1,4 @@
-package br.com.client_score.enums
+package br.com.clientscore.enums
 
 enum class State (val nome: String) {
     AC("Acre"),

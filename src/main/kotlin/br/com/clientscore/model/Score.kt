@@ -1,15 +1,8 @@
-package br.com.client_score.model
+package br.com.clientscore.model
 
 import java.time.LocalDateTime
 import java.util.UUID
-import javax.persistence.Column
-import javax.persistence.Entity
-import javax.persistence.GeneratedValue
-import javax.persistence.GenerationType
-import javax.persistence.Id
-import javax.persistence.JoinColumn
-import javax.persistence.OneToOne
-import javax.persistence.Table
+import javax.persistence.*
 
 @Entity
 data class Score(
@@ -21,9 +14,12 @@ data class Score(
     @JoinColumn(name = "client_id")
     val client: Client,
 
+    @Column(nullable = false)
     val consultedDate: LocalDateTime,
 
+    @Column(nullable = false)
     val score: Integer,
 
+    @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
 )

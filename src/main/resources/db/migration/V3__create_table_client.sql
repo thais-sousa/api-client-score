@@ -5,4 +5,4 @@ CREATE TABLE public.client(
     created_at TIMESTAMP NOT NULL,
     CONSTRAINT client_pk PRIMARY KEY (id),
     CONSTRAINT person_id_fk FOREIGN KEY (person_id) REFERENCES person (id)
-)
+);

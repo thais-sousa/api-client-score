@@ -1,5 +1,6 @@
 CREATE TABLE public.person(
     id UUID NOT NULL,
+    address_id UUID NOT NULL,
     name VARCHAR(50) NOT NULL,
     last_name VARCHAR(50) NOT NULL,
     birth_date DATE NOT NULL,
@@ -7,5 +8,6 @@ CREATE TABLE public.person(
     phone_number VARCHAR(11),
     email VARCHAR(50) UNIQUE NOT NULL,
     created_at TIMESTAMP NOT NULL,
-    CONSTRAINT person_pk PRIMARY KEY (id)
-)
+    CONSTRAINT person_pk PRIMARY KEY (id),
+    CONSTRAINT address_id_fk FOREIGN KEY (address_id) REFERENCES address (id)
+);
