@@ -1,0 +1,19 @@
+version: '3'
+services:
+  db-client-score:
+    container_name: db-client-score
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: client_score
+    networks:
+      - net
+#    volumes:
+#      - /home/onboarding/Documentos/Creditas/Estudos/client-score/src/main/resources/create_database_clientes.sh:/docker-entrypoint-initdb.d/create_database_clientes.sh
+
+networks:
+  net:
+    driver: bridge

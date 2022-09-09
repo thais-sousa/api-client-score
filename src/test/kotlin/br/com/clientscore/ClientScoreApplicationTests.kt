@@ -1,4 +1,4 @@
-package com.client_score
+package br.com.clientscore
 
 import org.junit.jupiter.api.Test
 import org.springframework.boot.test.context.SpringBootTest
