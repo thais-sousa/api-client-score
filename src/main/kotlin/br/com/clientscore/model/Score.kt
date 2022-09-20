@@ -18,7 +18,7 @@ data class Score(
     val consultedDate: LocalDateTime,
 
     @Column(nullable = false)
-    val score: Integer,
+    val score: Int,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()

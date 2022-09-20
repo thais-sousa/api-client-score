@@ -14,8 +14,7 @@ data class Client(
     @JoinColumn(name = "person_id")
     val person: Person,
 
-    @OneToOne(mappedBy = "client")
-    val score: Score,
+    val currentScore: Int,
 
     val createdAt: LocalDateTime = LocalDateTime.now()
 )
