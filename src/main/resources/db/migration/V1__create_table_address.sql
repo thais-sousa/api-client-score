@@ -4,5 +4,5 @@ CREATE TABLE public.address(
     city VARCHAR(50) NOT NULL,
     state VARCHAR(50) NOT NULL,
     created_at TIMESTAMP NOT NULL,
-    CONSTRAINT address_pk PRIMARY KEY (id)
+    CONSTRAINT adress_pk PRIMARY KEY (id)
 );
