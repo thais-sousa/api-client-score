@@ -2,7 +2,10 @@ package br.com.clientscore.model
 
 import java.time.LocalDateTime
 import java.util.*
-import javax.persistence.*
+import javax.persistence.Entity
+import javax.persistence.Id
+import javax.persistence.JoinColumn
+import javax.persistence.OneToOne
 
 @Entity
 data class Client(
@@ -13,8 +16,6 @@ data class Client(
     @OneToOne
     @JoinColumn(name = "person_id")
     val person: Person,
-
-    val currentScore: Int,
 
     val createdAt: LocalDateTime = LocalDateTime.now()
 )

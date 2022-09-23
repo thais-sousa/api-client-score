@@ -1,4 +1,4 @@
-package br.com.clientscore.dto
+package br.com.clientscore.dto.response
 
 import br.com.clientscore.model.Client
 
@@ -11,5 +11,4 @@ class ClientResponse(client: Client) {
     val phoneNumber = client.person.phoneNumber
     val email = client.person.email
     val address = AddressResponse(client.person.address)
-    val currentScore = client.currentScore
 }

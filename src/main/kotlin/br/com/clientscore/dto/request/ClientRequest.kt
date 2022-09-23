@@ -1,4 +1,4 @@
-package br.com.clientscore.dto
+package br.com.clientscore.dto.request
 
 import br.com.clientscore.model.Client
 import br.com.clientscore.model.Person
@@ -11,7 +11,7 @@ import javax.validation.constraints.NotEmpty
 import javax.validation.constraints.NotNull
 import javax.validation.constraints.Size
 
-data class PostClient(
+data class ClientRequest(
 
     @field:NotEmpty(message = "O nome deve ser informado!")
     val name: String,
@@ -34,7 +34,7 @@ data class PostClient(
     val email: String,
 
     @field:Valid
-    val address: PostAddress
+    val address: AddressRequest
 ) {
     fun convertToClient(): Client {
         val person = Person(
@@ -48,7 +48,6 @@ data class PostClient(
         )
         return Client(
             person = person,
-            currentScore = 0
         )
     }
 }

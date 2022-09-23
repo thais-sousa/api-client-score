@@ -1,10 +1,10 @@
-package br.com.clientscore.dto
+package br.com.clientscore.dto.request
 
 import br.com.clientscore.enums.State
 import br.com.clientscore.model.Address
 import javax.validation.constraints.NotBlank
 
-class PostAddress(
+class AddressRequest(
 
     @field:NotBlank
     private val street: String,

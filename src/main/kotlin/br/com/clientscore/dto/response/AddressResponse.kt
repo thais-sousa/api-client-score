@@ -1,9 +1,9 @@
-package br.com.clientscore.dto
+package br.com.clientscore.dto.response
 
 import br.com.clientscore.model.Address
 
 class AddressResponse(
-        address: Address
+    address: Address
 ) {
     val street = address.street
     val city = address.city
