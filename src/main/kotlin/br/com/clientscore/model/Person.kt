@@ -12,7 +12,7 @@ data class Person(
     val id: UUID = UUID.randomUUID(),
 
     @OneToOne
-    @JoinColumn(name="address_id")
+    @JoinColumn(name = "address_id")
     val address: Address,
 
     @Column(nullable = false)

@@ -1,7 +1,7 @@
 package br.com.clientscore.model
 
 import java.time.LocalDateTime
-import java.util.UUID
+import java.util.*
 import javax.persistence.*
 
 @Entity
@@ -18,7 +18,7 @@ data class Score(
     val consultedDate: LocalDateTime,
 
     @Column(nullable = false)
-    val score: Integer,
+    val score: Int,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
