@@ -15,6 +15,7 @@ class ClientService(
 
     @Transactional
     fun create(client: Client): ClientResponse {
+        personService.existisByCpfOrEmail(client.person.cpf, client.person.email)
         addressService.create(client.person.address)
         personService.create(client.person)
 
