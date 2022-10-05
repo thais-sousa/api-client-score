@@ -2,7 +2,6 @@ package br.com.clientscore.controller
 
 import br.com.clientscore.dto.request.ClientRequest
 import br.com.clientscore.dto.response.ClientResponse
-import br.com.clientscore.model.Client
 import br.com.clientscore.service.ClientService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
@@ -23,7 +22,7 @@ class ClientController(
     }
 
     @GetMapping
-    fun findAll(): List<Client> {
+    fun findAll(): List<ClientResponse> {
         return clientService.findAll()
     }
 
