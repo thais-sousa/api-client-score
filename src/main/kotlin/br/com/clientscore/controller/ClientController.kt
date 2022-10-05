@@ -35,4 +35,14 @@ class ClientController(
     fun findByCpf(@RequestHeader cpf: String): ClientResponse {
         return clientService.findByCpf(cpf)
     }
+
+    @DeleteMapping("/{id}")
+    fun deleteById(@PathVariable id: UUID) {
+        clientService.deleteById(id)
+    }
+
+    @DeleteMapping("/cpf")
+    fun deleteByCpf(@RequestHeader cpf: String) {
+        clientService.deleteByCpf(cpf)
+    }
 }
