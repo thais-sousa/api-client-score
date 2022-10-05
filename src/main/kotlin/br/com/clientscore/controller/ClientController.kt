@@ -22,18 +22,21 @@ class ClientController(
     }
 
     @GetMapping
-    fun findAll(): List<ClientResponse> {
-        return clientService.findAll()
+    fun findAll(): ResponseEntity<List<ClientResponse>> {
+        val client = clientService.findAll()
+        return ResponseEntity.status(HttpStatus.OK).body(client)
     }
 
     @GetMapping("/{id}")
-    fun findById(@PathVariable id: UUID): ClientResponse {
-        return clientService.findById(id)
+    fun findById(@PathVariable id: UUID): ResponseEntity<ClientResponse> {
+        val client = clientService.findById(id)
+        return ResponseEntity.status(HttpStatus.OK).body(client)
     }
 
     @GetMapping("/cpf")
-    fun findByCpf(@RequestHeader cpf: String): ClientResponse {
-        return clientService.findByCpf(cpf)
+    fun findByCpf(@RequestHeader cpf: String): ResponseEntity<ClientResponse> {
+        val client = clientService.findByCpf(cpf)
+        return ResponseEntity.status(HttpStatus.OK).body(client)
     }
 
     @DeleteMapping("/{id}")
