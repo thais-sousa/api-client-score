@@ -36,6 +36,20 @@ class ControllerAdvice {
         return ResponseEntity(error, HttpStatus.BAD_REQUEST)
     }
 
+    @ExceptionHandler(NotFoundException::class)
+    fun notFoundException(
+        ex: NotFoundException,
+        request: WebRequest
+    ): ResponseEntity<ErrorResponse> {
+        val error = ErrorResponse(
+            HttpStatus.NOT_FOUND.value(),
+            ex.message
+        )
+
+        return ResponseEntity(error, HttpStatus.NOT_FOUND)
+    }
+
+
     @ExceptionHandler(Exception::class)
     fun handleException(ex: Exception, request: WebRequest): ResponseEntity<ErrorResponse> {
         val error = ErrorResponse(
