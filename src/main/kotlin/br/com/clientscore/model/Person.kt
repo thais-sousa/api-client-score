@@ -13,25 +13,25 @@ data class Person(
 
     @OneToOne
     @JoinColumn(name = "address_id")
-    val address: Address,
+    var address: Address,
 
     @Column(nullable = false)
-    val name: String,
+    var name: String,
 
     @Column(nullable = false)
-    val lastName: String,
+    var lastName: String,
 
     @Column(nullable = false)
-    val birthDate: LocalDate,
+    var birthDate: LocalDate,
 
     @Column(unique = true, nullable = false)
     val cpf: String,
 
     @Column(nullable = false)
-    val phoneNumber: String,
+    var phoneNumber: String,
 
     @Column(nullable = false)
-    val email: String,
+    var email: String,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()

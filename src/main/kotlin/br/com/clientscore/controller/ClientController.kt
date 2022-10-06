@@ -1,12 +1,12 @@
 package br.com.clientscore.controller
 
 import br.com.clientscore.dto.request.ClientRequest
+import br.com.clientscore.dto.request.ClientRequestUpdate
 import br.com.clientscore.dto.response.ClientResponse
 import br.com.clientscore.service.ClientService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
-import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
 import java.util.*
 import javax.validation.Valid
 
@@ -49,6 +49,12 @@ class ClientController(
     @DeleteMapping("/cpf")
     fun deleteByCpf(@RequestHeader cpf: String): ResponseEntity<Unit> {
         clientService.deleteByCpf(cpf)
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
+    }
+
+    @PutMapping("/{id}")
+    fun updateById(@PathVariable id: UUID, @RequestBody @Valid client: ClientRequestUpdate): ResponseEntity<Unit> {
+        clientService.updateById(id, client)
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
     }
 }

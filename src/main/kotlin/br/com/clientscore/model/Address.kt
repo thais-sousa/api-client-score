@@ -12,14 +12,14 @@ data class Address(
     val id: UUID = UUID.randomUUID(),
 
     @Column(nullable = false)
-    val street: String,
+    var street: String,
 
     @Column(nullable = false)
-    val city: String,
+    var city: String,
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    val state: State,
+    var state: State,
 
     @Column(nullable = false)
     val createdAt: LocalDateTime = LocalDateTime.now()
