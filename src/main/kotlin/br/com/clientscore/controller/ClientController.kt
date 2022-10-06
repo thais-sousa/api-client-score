@@ -6,6 +6,7 @@ import br.com.clientscore.service.ClientService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*
+import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler
 import java.util.*
 import javax.validation.Valid
 
@@ -37,5 +38,17 @@ class ClientController(
     fun findByCpf(@RequestHeader cpf: String): ResponseEntity<ClientResponse> {
         val client = clientService.findByCpf(cpf)
         return ResponseEntity.status(HttpStatus.OK).body(client)
+    }
+
+    @DeleteMapping("/{id}")
+    fun deleteById(@PathVariable id: UUID): ResponseEntity<Unit> {
+        clientService.deleteById(id)
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
+    }
+
+    @DeleteMapping("/cpf")
+    fun deleteByCpf(@RequestHeader cpf: String): ResponseEntity<Unit> {
+        clientService.deleteByCpf(cpf)
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
     }
 }

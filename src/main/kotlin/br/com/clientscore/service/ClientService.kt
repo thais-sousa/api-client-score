@@ -51,6 +51,16 @@ class ClientService(
         return convertToClientResponse(client)
     }
 
+    fun deleteById(id: UUID) {
+        val client = findClientId(id)
+        clientRepository.delete(client)
+    }
+
+    fun deleteByCpf(cpf: String) {
+        val client = findClientCpf(cpf)
+        clientRepository.delete(client)
+    }
+
     fun convertToClientResponse(client: Client): ClientResponse {
         return ClientResponse(
             id = client.id,
