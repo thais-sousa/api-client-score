@@ -3,7 +3,7 @@ package br.com.clientscore.dto.request
 import br.com.clientscore.model.Person
 import java.time.LocalDate
 
-class PersonRequest(
+class PersonRequestUpdate(
     private val name: String,
     private val lastName: String,
     private val birthDate: LocalDate,

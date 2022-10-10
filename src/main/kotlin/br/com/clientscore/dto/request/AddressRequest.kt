@@ -21,4 +21,12 @@ class AddressRequest(
             state = this.state
         )
     }
+
+    fun updateAddress(address: Address): Address {
+        address.street = this.street
+        address.city = this.city
+        address.state = this.state
+
+        return address
+    }
 }

@@ -1,5 +1,6 @@
 package br.com.clientscore.service
 
+import br.com.clientscore.dto.request.ClientRequestUpdate
 import br.com.clientscore.dto.response.AddressResponse
 import br.com.clientscore.dto.response.ClientResponse
 import br.com.clientscore.exception.NotFoundException
@@ -59,6 +60,18 @@ class ClientService(
     fun deleteByCpf(cpf: String) {
         val client = findClientCpf(cpf)
         clientRepository.delete(client)
+    }
+
+    fun updateById(id: UUID, clientRequest: ClientRequestUpdate) {
+        val client = findClientId(id)
+        val clientUpdate = clientRequest.updateClient(client)
+        clientRepository.save(clientUpdate)
+    }
+
+    fun updateByCpf(cpf: String, clientRequest: ClientRequestUpdate) {
+        val client = findClientCpf(cpf)
+        val clientUpdate = clientRequest.updateClient(client)
+        clientRepository.save(clientUpdate)
     }
 
     fun convertToClientResponse(client: Client): ClientResponse {
