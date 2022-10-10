@@ -57,4 +57,10 @@ class ClientController(
         clientService.updateById(id, client)
         return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
     }
+
+    @PutMapping("/cpf")
+    fun updateByCpf(@RequestHeader cpf: String, @RequestBody @Valid client: ClientRequestUpdate): ResponseEntity<Unit> {
+        clientService.updateByCpf(cpf, client)
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build()
+    }
 }

@@ -42,20 +42,4 @@ data class ClientRequestUpdate(
 
         return client
     }
-
 }
-//) {
-//    fun convertToClient(): Client {
-//        val person = Person(
-//            name = this.name,
-//            lastName = this.lastName,
-//            birthDate = this.birthDate,
-//            phoneNumber = this.phoneNumber,
-//            email = this.email,
-//            address = this.address.convertToAddress()
-//        )
-//        return Client(
-//            person = person,
-//        )
-//    }
-//}

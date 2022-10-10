@@ -68,6 +68,12 @@ class ClientService(
         clientRepository.save(clientUpdate)
     }
 
+    fun updateByCpf(cpf: String, clientRequest: ClientRequestUpdate) {
+        val client = findClientCpf(cpf)
+        val clientUpdate = clientRequest.updateClient(client)
+        clientRepository.save(clientUpdate)
+    }
+
     fun convertToClientResponse(client: Client): ClientResponse {
         return ClientResponse(
             id = client.id,
@@ -80,6 +86,4 @@ class ClientService(
             address = AddressResponse(client.person.address)
         )
     }
-
-
 }
